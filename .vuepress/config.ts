@@ -116,7 +116,7 @@ export default defineConfig({
   ],
   // 主题配置
   themeConfig: {
-    logo: "/logo.png",
+    logo: "/logo.jpg",
     nav: navbar,
     sidebar,
     lastUpdated: "最近更新",
