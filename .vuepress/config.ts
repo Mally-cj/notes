@@ -5,12 +5,12 @@ import footer from "./footer";
 // import extraSideBar from "./extraSideBar";
 import path from 'path';
 
-const author = "deepwzh";
+const author = "mally";
 const domain = "https://codefather.cn";
 const tags = ["程序员", "编程", "计算机"];
 
 export default defineConfig({
-  title: "deepwzh的技术笔记",
+  title: "mally的技术笔记",
   description: "贴心的编程学习路线，全面的编程知识百科",
   head: [
     // 站点图标
@@ -21,7 +21,7 @@ export default defineConfig({
       {
         name: "keywords",
         content:
-          "deepwzh, 技术笔记, 前端, 开发, 编程分享",
+          "mally, 技术笔记, 前端, 开发, 编程分享",
       },
     ],
     // 百度统计

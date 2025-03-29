@@ -2,11 +2,11 @@
 permalink: /
 ---
 
-# deepwzh的技术笔记
+# mally的技术笔记
 
-> 作者：[deepwzh](https://github.com/deepwzh)
+> 作者：[mally](https://github.com/Mally-cj)
 >
-> 本站地址：[https://notes.92ac.cn](https://notes.92ac.cn)
+> 本站地址：[https://notes.mally.cc](https://notes.mally.cc)
 
 ## 关于本站
 
@@ -14,16 +14,11 @@ permalink: /
 
 ## 本站内容
 
-- [操作系统](/操作系统)
-- [计算机网络](/计算机网络)
-- [数据库](/数据库)
-- [Go](/Go)
-- [Python](/Python)
-- [C++](/C++)
+- [大模型](/大模型)
 
 ## 其他内容
 
-- [我的Github](https://github.com/deepwzh)
+- [我的Github](https://github.com/Mally-cj)
 - [我的博客](https://blogs.92ac.cn)
 
 ## [作者介绍](/作者)
