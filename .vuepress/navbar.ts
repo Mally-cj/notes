@@ -2,8 +2,8 @@ import {NavItem} from "vuepress/config";
 
 export default [
     {
-        text: "大模型",
-        link: '/大模型/'
+        text: "AIGC相关",
+        link: '/AIGC相关/'
     },
     {
         text: "关于作者",
