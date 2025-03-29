@@ -4,5 +4,17 @@
       "name": "AIGC相关",
       "url": "https://p12e1xby888.feishu.cn/wiki/settings/7487144359255654428"
     }
+  ],
+  "collapsible_depth": 2,
+  "max_depth": 10,
+  "nav": [
+    {
+      "text": "AIGC相关",
+      "link": "/AIGC相关/"
+    },
+    {
+        "text": "关于作者",
+        "link": "/关于作者/"
+    }
   ]
 }
