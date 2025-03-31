@@ -10,7 +10,7 @@ permalink: /
 
 ## 关于本站
 
-本站是用于记录编程学习的笔记，里面主要的内容同步自飞书知识库
+本站是用于记录AI相关知识的笔记，里面主要的内容同步自飞书知识库
 
 ## 本站内容
 
@@ -19,7 +19,8 @@ permalink: /
 ## 其他内容
 
 - [我的Github](https://github.com/Mally-cj)
-- [我的博客](https://blogs.92ac.cn)
+- [我的博客](https://blogs.mally.cc) - 欢迎访问！
+
 
 ## [作者介绍](/作者)
 
