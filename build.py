@@ -276,7 +276,7 @@ export default {json.dumps(self.nav, indent=4, ensure_ascii=False)} as NavItem[]
                     md_files.append(item)
 
             if md_files:
-                content_listing += "## 子文档\n\n"
+                content_listing += "## 目录\n\n"
                 for md_file in sorted(md_files):
                     title = os.path.splitext(md_file)[0]
                     content_listing += f"- [{title}](./{md_file})\n"
