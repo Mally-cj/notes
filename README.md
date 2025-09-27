@@ -9,8 +9,8 @@ permalink: /
 > 本站地址：[https://notes.mally.cc](https://notes.mally.cc)
 
 ## 关于本站
-
-本站是用于记录AI相关知识的笔记，里面主要的内容同步自飞书知识库
+本博客已经不维护了，暂时存放长文。
+日常更新的学习笔记会会放在 [https://github.com/Mally-cj/LLM_day](https://github.com/Mally-cj/LLM_day)
 
 ## 本站内容
 
@@ -23,5 +23,4 @@ permalink: /
 
 
 ## [作者介绍](/关于作者)
-
-没啥好说的，感谢您的阅读！
+忙碌找工作ing，结束了更长文
