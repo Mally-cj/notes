@@ -31,6 +31,6 @@ permalink: /
 ## 其他内容
 
 - [我的Github](https://github.com/Mally-cj)
-- [我的博客](https://blogs.mally.cc) - 欢迎访问！
+- [我的CSDN博客](https://blog.csdn.net/qq_43235540) - 欢迎访问！
 
 
