@@ -23,6 +23,7 @@ jobs:
           fetch-depth: 0
 
       - name: 飞书文档同步
+        if: ${{ vars.FEISHU2MD_CONFIG != '' }}
         uses: docker://deepwzh/feishu2md:v0.0.1
         with:
           entrypoint: /bin/sh

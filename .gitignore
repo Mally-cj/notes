@@ -1,4 +1,6 @@
 node_modules
+.DS_Store
+__pycache__/
 # VuePress 默认临时文件目录
 .vuepress/.temp
 # VuePress 默认缓存目录
@@ -6,7 +8,6 @@ node_modules
 # VuePress 默认构建生成的静态文件目录
 .vuepress/dist
 .vuepress/sidebars/
-.vuepress/sidebar.ts
 .vuepress/public/wiki/**/*
 git0/
 deploy/config.json

@@ -10,8 +10,8 @@ import footer from "./footer";
 import path from 'path';
 
 const author = "mally";
-const domain = "https://codefather.cn";
-const tags = ["程序员", "编程", "计算机"];
+const domain = "https://notes.mally.cc";
+const tags = ["AI", "技术笔记", "学习笔记"];
 
 export default defineUserConfig({
   bundler: viteBundler(),
@@ -54,7 +54,7 @@ export default defineUserConfig({
   lang: 'zh-CN',
   // theme: defaultTheme(),
   title: "mally的技术笔记",
-  description: "贴心的编程学习路线，全面的编程知识百科",
+  description: "记录 AI 技术、科研学习与工程实践",
   head: [
       ["link", { rel: "icon", href: "/favicon.ico" }],
       // SEO
