@@ -137,6 +137,7 @@ export default {json.dumps(self.nav, indent=4, ensure_ascii=False)} as NavItem[]
 
         self.download_wiki(wiki_name, wiki_url)
         self.move_static_directory(wiki_name)
+        self.rewrite_image_paths(wiki_name)
 
         # self.change_directory_name(wiki_dir)
 
@@ -169,6 +170,45 @@ export default {json.dumps(self.nav, indent=4, ensure_ascii=False)} as NavItem[]
                     # 如果目标目录存在，先删除
                     shutil.rmtree(target_static_dir)
                 os.rename(source_static_dir, target_static_dir)
+
+    def rewrite_image_paths(self, wiki_name: str):
+        """
+        遍历所有 Markdown，把指向 static/ 的图片/链接改写成 /wiki/<wiki_name>/<rel>/static/...
+        因为 static 目录已经被移到 .vuepress/public/wiki/<wiki_name>/<rel>/static 下。
+        """
+        from urllib.parse import quote
+
+        source_wiki_dir = self.get_wiki_dir(wiki_name)
+        # 匹配 ](xxx) 形式中以 static/ 或 ./static/ 开头的资源
+        pattern = re.compile(r'(!?\[[^\]]*\]\()(\.?/?static/)([^)\s]+)(\))')
+
+        for root, dirs, files in os.walk(source_wiki_dir):
+            for fname in files:
+                if not fname.endswith('.md'):
+                    continue
+                fpath = os.path.join(root, fname)
+                rel_dir = os.path.relpath(root, start=source_wiki_dir)
+                rel_dir_url = '' if rel_dir == '.' else '/'.join(quote(p) for p in rel_dir.split(os.sep))
+                base_url = f"/wiki/{quote(wiki_name)}"
+                if rel_dir_url:
+                    base_url = f"{base_url}/{rel_dir_url}"
+
+                try:
+                    with open(fpath, 'r', encoding='utf-8') as f:
+                        content = f.read()
+                except Exception as e:
+                    print(f"  Skip (read error) {fpath}: {e}")
+                    continue
+
+                def repl(m):
+                    asset = quote(m.group(3))
+                    return f"{m.group(1)}{base_url}/static/{asset}{m.group(4)}"
+
+                new_content = pattern.sub(repl, content)
+                if new_content != content:
+                    with open(fpath, 'w', encoding='utf-8') as f:
+                        f.write(new_content)
+                    print(f"  Rewrote image paths in: {fpath}")
 
     def get_realname_dir_name(self: str, directory: str):
         """
