@@ -11,12 +11,12 @@ Markdown -> main 分支 -> GitHub Actions -> gh-pages -> notes.mally.cc
 ## 内容位置
 
 - `README.md`：网站首页。
-- `博客/README.md`：文章统一入口和分类索引。
-- `AIGC相关/`：AIGC 主题文章；同主题的新文章继续写入对应子目录。
-- `<主题>/`：其他主题文章；新增主题时在仓库根目录创建分类，并提供 `README.md` 索引。
-- `.vuepress/public/images/<主题>/`：文章图片，正文使用 `/images/<主题>/...` 引用。
-- `.vuepress/navbar.ts`：顶部导航。
-- `.vuepress/sidebar.ts` 和 `.vuepress/sidebars/`：侧边栏配置。
+- `博客/<主题>/<分类>/`：文章内容；一级主题自动生成顶部导航，子目录自动生成目录页和侧边栏。
+- `博客/<主题>/<分类>/_assets/`：分类内文章图片，正文使用相对路径引用。
+- `.vuepress/content/discover.ts`：扫描内容目录，生成导航和侧边栏数据。
+- `.vuepress/content/catalogPlugin.ts`：生成虚拟目录页、旧 URL 跳转和旧图片兼容路径。
+
+不要手工创建目录 `README.md`，也不要维护静态 navbar 或 sidebar 文件。新增、移动或删除文章后，如果开发服务器已启动，需要重启一次以重新扫描目录结构；编辑已有文章可以正常热更新。
 
 ## 构建验证
 
