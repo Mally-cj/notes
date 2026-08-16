@@ -28,6 +28,17 @@ jobs:
         with:
           entrypoint: /bin/sh
           args: -c "mkdir -p /github/home/.config/feishu2md && echo '${{ vars.FEISHU2MD_CONFIG }}' | base64 -d > /github/home/.config/feishu2md/config.json && python3 build.py"
+
+      - name: 固化飞书文档到仓库
+        run: |-
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add -f -- "AIGC相关" ".vuepress/public/wiki" ".vuepress/sidebars" ".vuepress/sidebar.ts" ".vuepress/navbar.ts"
+          if ! git diff --cached --quiet; then
+            git commit -m "docs: migrate Feishu wiki to local Markdown [skip ci]"
+            git push origin HEAD:main
+          fi
+
       - name: 设置 Node.js
         uses: actions/setup-node@v3
         with:
