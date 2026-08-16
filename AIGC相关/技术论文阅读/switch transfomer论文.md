@@ -31,10 +31,10 @@ Google 的 Noam Shazeer，Barret Zoph，William Fedus 等人，2021 年 1 月发
 
 作者提出了第 4 个准则，就是 总的计算量不变，模型参数规模越大，也能提升大模型效果。
 
-> ![](/wiki/AIGC%E7%9B%B8%E5%85%B3/%E6%8A%80%E6%9C%AF%E8%AE%BA%E6%96%87%E9%98%85%E8%AF%BB/static/TeoDbHgwRonsyaxLYl6cojGBnWf.png)
+> ![](/images/AIGC%E7%9B%B8%E5%85%B3/%E6%8A%80%E6%9C%AF%E8%AE%BA%E6%96%87%E9%98%85%E8%AF%BB/static/TeoDbHgwRonsyaxLYl6cojGBnWf.png)
 
 ### 看点 2: 使用单个专家效果好的原因
 
 使用 1 个专家的好处是：1. 路由成本下降了，因为只路由到 1 个专家。2. 专家容量（1 个 device 上有几个专家）可以减少，因为之前一个 token 要交给至少两个专家处理，现在只给 1 个专家。 3.  路由简化也也使得通信成本下降(因为是分布式)。
 
-> ![](/wiki/AIGC%E7%9B%B8%E5%85%B3/%E6%8A%80%E6%9C%AF%E8%AE%BA%E6%96%87%E9%98%85%E8%AF%BB/static/DBBWba8fKoplsZxapVkcPWtknib.png)
+> ![](/images/AIGC%E7%9B%B8%E5%85%B3/%E6%8A%80%E6%9C%AF%E8%AE%BA%E6%96%87%E9%98%85%E8%AF%BB/static/DBBWba8fKoplsZxapVkcPWtknib.png)

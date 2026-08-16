@@ -25,11 +25,11 @@ for each epoch:
 
 ## 其中公式解释
 
-![](/wiki/AIGC%E7%9B%B8%E5%85%B3/%E6%8A%80%E6%9C%AF%E9%95%BF%E6%96%87/static/Ds88bo4tiorCDAxwhK3cHWKTnfe.png)
+![](/images/AIGC%E7%9B%B8%E5%85%B3/%E6%8A%80%E6%9C%AF%E9%95%BF%E6%96%87/static/Ds88bo4tiorCDAxwhK3cHWKTnfe.png)
 
 ### 
 
-![](/wiki/AIGC%E7%9B%B8%E5%85%B3/%E6%8A%80%E6%9C%AF%E9%95%BF%E6%96%87/static/GOdSbU8NlolImAxoa4jcGdiSn8c.png)
+![](/images/AIGC%E7%9B%B8%E5%85%B3/%E6%8A%80%E6%9C%AF%E9%95%BF%E6%96%87/static/GOdSbU8NlolImAxoa4jcGdiSn8c.png)
 
 ```python
 ratio = torch.exp(negative_approx_kl)
@@ -244,7 +244,7 @@ e. 将标准化后的分数扩展到每个序列的每个有效位置
    - 最终 advantages 维度: (B*n, response_length)，每个序列的所有有效 token 位置都有相同的优势值
 ```
 
-![](/wiki/AIGC%E7%9B%B8%E5%85%B3/%E6%8A%80%E6%9C%AF%E9%95%BF%E6%96%87/static/EGC3bvNgGolrnSxx0JNcOhxPnJE.png)
+![](/images/AIGC%E7%9B%B8%E5%85%B3/%E6%8A%80%E6%9C%AF%E9%95%BF%E6%96%87/static/EGC3bvNgGolrnSxx0JNcOhxPnJE.png)
 
 1. GRPO 的核心特性
 

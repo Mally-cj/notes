@@ -38,11 +38,11 @@ $$
 
 ### 2.对 PPO 公式展开，利用策略分布$\pi$来表示奖励 r(x,y)。
 
-![](/wiki/AIGC%E7%9B%B8%E5%85%B3/%E6%8A%80%E6%9C%AF%E7%BB%86%E7%A2%8E%E5%A4%A7%E6%A8%A1%E5%9E%8B%E7%9F%A5%E8%AF%86/static/VbilbcyOkovuEexvIMucIPCgns6.png)
+![](/images/AIGC%E7%9B%B8%E5%85%B3/%E6%8A%80%E6%9C%AF%E7%BB%86%E7%A2%8E%E5%A4%A7%E6%A8%A1%E5%9E%8B%E7%9F%A5%E8%AF%86/static/VbilbcyOkovuEexvIMucIPCgns6.png)
 
 定义一个新的概率分布$\pi^* = \frac{1}{Z(x)} \pi_{\text{ref}}(y|x) \cdot \exp\left\{ \frac{1}{\beta} r(x, y) \right\}$，上述展开的公式则可以写成
 
-![](/wiki/AIGC%E7%9B%B8%E5%85%B3/%E6%8A%80%E6%9C%AF%E7%BB%86%E7%A2%8E%E5%A4%A7%E6%A8%A1%E5%9E%8B%E7%9F%A5%E8%AF%86/static/Bu5AbgIH7oF7Zox4w2HchR46nGe.png)
+![](/images/AIGC%E7%9B%B8%E5%85%B3/%E6%8A%80%E6%9C%AF%E7%BB%86%E7%A2%8E%E5%A4%A7%E6%A8%A1%E5%9E%8B%E7%9F%A5%E8%AF%86/static/Bu5AbgIH7oF7Zox4w2HchR46nGe.png)
 
 要让$\pi_\theta$使得 J 最小，而$logZ(x)$ 与$\pi_\theta$无关，故而只要优化第一项 KL 就好，KL 最小，则两个分布一样，即$\pi^*=\pi_\theta$,那么这个公式为
 
@@ -58,7 +58,7 @@ $$
 
 首先看 Bradley-Terry 模型定义：
 
-![](/wiki/AIGC%E7%9B%B8%E5%85%B3/%E6%8A%80%E6%9C%AF%E7%BB%86%E7%A2%8E%E5%A4%A7%E6%A8%A1%E5%9E%8B%E7%9F%A5%E8%AF%86/static/M4k8bnosMokpfBxdAQ9clXp3nfe.png)
+![](/images/AIGC%E7%9B%B8%E5%85%B3/%E6%8A%80%E6%9C%AF%E7%BB%86%E7%A2%8E%E5%A4%A7%E6%A8%A1%E5%9E%8B%E7%9F%A5%E8%AF%86/static/M4k8bnosMokpfBxdAQ9clXp3nfe.png)
 
 把要奖励最大，利用 Bradley-Terry 化解为了好的回答比坏的回答胜出的概率更大。
 
@@ -68,7 +68,7 @@ $$
 
 故而 DPO 的损失函数为：
 
-![](/wiki/AIGC%E7%9B%B8%E5%85%B3/%E6%8A%80%E6%9C%AF%E7%BB%86%E7%A2%8E%E5%A4%A7%E6%A8%A1%E5%9E%8B%E7%9F%A5%E8%AF%86/static/HRRobdeL4oNn6qxf0oXcSUtcnpf.png)
+![](/images/AIGC%E7%9B%B8%E5%85%B3/%E6%8A%80%E6%9C%AF%E7%BB%86%E7%A2%8E%E5%A4%A7%E6%A8%A1%E5%9E%8B%E7%9F%A5%E8%AF%86/static/HRRobdeL4oNn6qxf0oXcSUtcnpf.png)
 
 ## 其他问题：
 

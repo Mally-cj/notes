@@ -11,9 +11,9 @@
 
 MoE 是一个组件级的设计思想，它把 Transformer 中的稠密计算层（dense feed forward network，FFN，由线性层、激活函数、线性层组成）替换成了 sparse switch FFN layer，如此替换后涉及如何稳定训练路由层来选择合适的专家，故而有很多相关的研究。
 
-> ![](/wiki/AIGC%E7%9B%B8%E5%85%B3/%E6%8A%80%E6%9C%AF%E8%AE%BA%E6%96%87%E9%98%85%E8%AF%BB/static/WZT1bHcqUohW3QxHjttcmkQvncc.png)
+> ![](/images/AIGC%E7%9B%B8%E5%85%B3/%E6%8A%80%E6%9C%AF%E8%AE%BA%E6%96%87%E9%98%85%E8%AF%BB/static/WZT1bHcqUohW3QxHjttcmkQvncc.png)
 
-![](/wiki/AIGC%E7%9B%B8%E5%85%B3/%E6%8A%80%E6%9C%AF%E8%AE%BA%E6%96%87%E9%98%85%E8%AF%BB/static/HwFfbY3zDoip5lx6VSccuT0cnJh.png)
+![](/images/AIGC%E7%9B%B8%E5%85%B3/%E6%8A%80%E6%9C%AF%E8%AE%BA%E6%96%87%E9%98%85%E8%AF%BB/static/HwFfbY3zDoip5lx6VSccuT0cnJh.png)
 
 ## 问题 2: MoE 的优点是什么？
 
@@ -26,8 +26,8 @@ MoE 是一个组件级的设计思想，它把 Transformer 中的稠密计算层
 这篇博客对于发展历史提的比较少，故而这部分内容，是根据 [https://www.bilibili.com/video/BV1y7wZeeE96](https://www.bilibili.com/video/BV1y7wZeeE96) 这个视频整理的。
 第一个表是关键理论创新的发展历史，第 2 个表是不同早期 MoE 模型（大参数少专家）的参数情况，第 3 个表是 deepseek（少参数多专家）的参数情况。
 
-![](/wiki/AIGC%E7%9B%B8%E5%85%B3/%E6%8A%80%E6%9C%AF%E8%AE%BA%E6%96%87%E9%98%85%E8%AF%BB/static/Fv8ebkQv4oMwFUxs74lcVeDjn7g.png)
-![](/wiki/AIGC%E7%9B%B8%E5%85%B3/%E6%8A%80%E6%9C%AF%E8%AE%BA%E6%96%87%E9%98%85%E8%AF%BB/static/WI9MbdnNZo4AwQxOAmwcKH4KnHb.png)
+![](/images/AIGC%E7%9B%B8%E5%85%B3/%E6%8A%80%E6%9C%AF%E8%AE%BA%E6%96%87%E9%98%85%E8%AF%BB/static/Fv8ebkQv4oMwFUxs74lcVeDjn7g.png)
+![](/images/AIGC%E7%9B%B8%E5%85%B3/%E6%8A%80%E6%9C%AF%E8%AE%BA%E6%96%87%E9%98%85%E8%AF%BB/static/WI9MbdnNZo4AwQxOAmwcKH4KnHb.png)
 
 ## 问题 4: MoE 的负载均衡问题
 
@@ -44,11 +44,11 @@ MoE 是一个组件级的设计思想，它把 Transformer 中的稠密计算层
 2. 添加负载均衡辅助损失项：目的是鼓励所有专家有相同的重要性，可以通过确保所有专家接收到大致相等数量多训练样本实现。
 3. 限制专家容量：设定一个阈值，定义一个专家能处理多少 token。如果在 top-n 的设定中，选择的 n 个专家都已经超过数量限制了，则会丢弃这个 token，或者通过残差连接到下一层中。
 
-> ![](/wiki/AIGC%E7%9B%B8%E5%85%B3/%E6%8A%80%E6%9C%AF%E8%AE%BA%E6%96%87%E9%98%85%E8%AF%BB/static/VTa4b93G5oHKFTxKZe2cGuXinSe.png)
+> ![](/images/AIGC%E7%9B%B8%E5%85%B3/%E6%8A%80%E6%9C%AF%E8%AE%BA%E6%96%87%E9%98%85%E8%AF%BB/static/VTa4b93G5oHKFTxKZe2cGuXinSe.png)
 
 ## 问题 5: MoE 有哪些参数，对训练有什么影响？
 
-![](/wiki/AIGC%E7%9B%B8%E5%85%B3/%E6%8A%80%E6%9C%AF%E8%AE%BA%E6%96%87%E9%98%85%E8%AF%BB/static/VfLdb7U3ToYUR5x2K1PcMdtBnFd.png)
+![](/images/AIGC%E7%9B%B8%E5%85%B3/%E6%8A%80%E6%9C%AF%E8%AE%BA%E6%96%87%E9%98%85%E8%AF%BB/static/VfLdb7U3ToYUR5x2K1PcMdtBnFd.png)
 
 ### 分点 a: top-n Routing
 
@@ -62,13 +62,13 @@ Expert Capacity = $\left( \frac{\text{tokens per batch}}{\text{number of experts
 
 而 CF 参数的物理含义可以从上面这个公式，并结合下图看出，其中 expert capacity 就是 1 个专家处理几个 token。
 
-> ![](/wiki/AIGC%E7%9B%B8%E5%85%B3/%E6%8A%80%E6%9C%AF%E8%AE%BA%E6%96%87%E9%98%85%E8%AF%BB/static/YI93bIBydoWtMFxIvXUcGda3nic.png)
+> ![](/images/AIGC%E7%9B%B8%E5%85%B3/%E6%8A%80%E6%9C%AF%E8%AE%BA%E6%96%87%E9%98%85%E8%AF%BB/static/YI93bIBydoWtMFxIvXUcGda3nic.png)
 
 ### 分点 c: 专家数量
 
 增加专家的数量，可以增加模型的参数量，在预训练中会有更好的效果。然而在微调时，减少模型的数量，可以有助于减少过拟合。
 
-> ![](/wiki/AIGC%E7%9B%B8%E5%85%B3/%E6%8A%80%E6%9C%AF%E8%AE%BA%E6%96%87%E9%98%85%E8%AF%BB/static/HGvnbmFmkog8o0xoOXpcb9Yjn9r.png)
+> ![](/images/AIGC%E7%9B%B8%E5%85%B3/%E6%8A%80%E6%9C%AF%E8%AE%BA%E6%96%87%E9%98%85%E8%AF%BB/static/HGvnbmFmkog8o0xoOXpcb9Yjn9r.png)
 
 ## 问题 6: 微调 MoE 存在的问题？
 
@@ -76,8 +76,8 @@ MoE 相比于稠密模型，更容易出现过拟合现象，解决的办法有�
 
 1. 使用更强的内部正则化，如高比例的 dropout。
 
-> ![](/wiki/AIGC%E7%9B%B8%E5%85%B3/%E6%8A%80%E6%9C%AF%E8%AE%BA%E6%96%87%E9%98%85%E8%AF%BB/static/ARszb0NW8oNgeuxlbdqcFlflnOe.png)
+> ![](/images/AIGC%E7%9B%B8%E5%85%B3/%E6%8A%80%E6%9C%AF%E8%AE%BA%E6%96%87%E9%98%85%E8%AF%BB/static/ARszb0NW8oNgeuxlbdqcFlflnOe.png)
 
 1. 冻结 MoE 的参数，训练公共部分。
 
-> ![](/wiki/AIGC%E7%9B%B8%E5%85%B3/%E6%8A%80%E6%9C%AF%E8%AE%BA%E6%96%87%E9%98%85%E8%AF%BB/static/FcSHbWnFTo9kRrxPGIDc2YnknJb.png)
+> ![](/images/AIGC%E7%9B%B8%E5%85%B3/%E6%8A%80%E6%9C%AF%E8%AE%BA%E6%96%87%E9%98%85%E8%AF%BB/static/FcSHbWnFTo9kRrxPGIDc2YnknJb.png)

@@ -32,4 +32,4 @@ Swish 比 ReLU 激活函数更好，因为它在 0 附近提供了更平滑的�
 
 Swish 激活函数在参数 β 不同取值下的形状：
 
-![](/wiki/AIGC%E7%9B%B8%E5%85%B3/%E6%8A%80%E6%9C%AF%E7%BB%86%E7%A2%8E%E5%A4%A7%E6%A8%A1%E5%9E%8B%E7%9F%A5%E8%AF%86/static/LH3obnwZnoXanvxx3uLcXUkmntf.png)
+![](/images/AIGC%E7%9B%B8%E5%85%B3/%E6%8A%80%E6%9C%AF%E7%BB%86%E7%A2%8E%E5%A4%A7%E6%A8%A1%E5%9E%8B%E7%9F%A5%E8%AF%86/static/LH3obnwZnoXanvxx3uLcXUkmntf.png)

@@ -10,11 +10,11 @@ MoE（Mixture of Experts，专家混合）是一种组件级的模型设计思�
 ### 为什么使用 MoE？
 
 MoE 能够在保持与传统稠密模型相同参数规模的前提下，通过仅激活少量专家参与推理，大幅降低实际计算量，从而用更少的计算量得到了模型规模的增益效果。
-![](/wiki/AIGC%E7%9B%B8%E5%85%B3/%E6%8A%80%E6%9C%AF%E9%95%BF%E6%96%87/static/RdvublI7io0ZR1xO3FPc0HtynJg.png)
+![](/images/AIGC%E7%9B%B8%E5%85%B3/%E6%8A%80%E6%9C%AF%E9%95%BF%E6%96%87/static/RdvublI7io0ZR1xO3FPc0HtynJg.png)
 
 ### MoE 的具体过程是怎么样的？
 
-![](/wiki/AIGC%E7%9B%B8%E5%85%B3/%E6%8A%80%E6%9C%AF%E9%95%BF%E6%96%87/static/ARjbbZpeRoqUK1xNd3FcM2TUnv6.png)
+![](/images/AIGC%E7%9B%B8%E5%85%B3/%E6%8A%80%E6%9C%AF%E9%95%BF%E6%96%87/static/ARjbbZpeRoqUK1xNd3FcM2TUnv6.png)
 
 ### 负载均衡
 
@@ -32,7 +32,7 @@ MoE 能够在保持与传统稠密模型相同参数规模的前提下，通过�
 
 #### 什么是负载均衡辅助损失项？
 
-![](/wiki/AIGC%E7%9B%B8%E5%85%B3/%E6%8A%80%E6%9C%AF%E9%95%BF%E6%96%87/static/WSe7bkFy8omJJtxGEwScffCVnKb.png)
+![](/images/AIGC%E7%9B%B8%E5%85%B3/%E6%8A%80%E6%9C%AF%E9%95%BF%E6%96%87/static/WSe7bkFy8omJJtxGEwScffCVnKb.png)
 
 > 这里有两个细节：
 > 1.为什么最后系数包含 N？
@@ -54,7 +54,7 @@ MoE 能够在保持与传统稠密模型相同参数规模的前提下，通过�
 
 ### 一些重要参数的权衡
 
-![](/wiki/AIGC%E7%9B%B8%E5%85%B3/%E6%8A%80%E6%9C%AF%E9%95%BF%E6%96%87/static/R1YwbBHvtose7FxSPvUcRmtanJc.png)
+![](/images/AIGC%E7%9B%B8%E5%85%B3/%E6%8A%80%E6%9C%AF%E9%95%BF%E6%96%87/static/R1YwbBHvtose7FxSPvUcRmtanJc.png)
 
 # 架构发展
 
@@ -72,14 +72,14 @@ MoE 能够在保持与传统稠密模型相同参数规模的前提下，通过�
 
 1. 专家容量 B 和容量因子 CF 的控制关系：$C=\frac{B*K}{N}*CF$，其中$\frac{B}{N}$可以简单理解为负载的理想情况，每个专家应该处理几个 token。
 
-![](/wiki/AIGC%E7%9B%B8%E5%85%B3/%E6%8A%80%E6%9C%AF%E9%95%BF%E6%96%87/static/OBRbbR14coPTp2xnpsOc6EeinR5.png)
-![](/wiki/AIGC%E7%9B%B8%E5%85%B3/%E6%8A%80%E6%9C%AF%E9%95%BF%E6%96%87/static/WFwlbOrHWo7IsmxTPAWcchj9n6e.png)
+![](/images/AIGC%E7%9B%B8%E5%85%B3/%E6%8A%80%E6%9C%AF%E9%95%BF%E6%96%87/static/OBRbbR14coPTp2xnpsOc6EeinR5.png)
+![](/images/AIGC%E7%9B%B8%E5%85%B3/%E6%8A%80%E6%9C%AF%E9%95%BF%E6%96%87/static/WFwlbOrHWo7IsmxTPAWcchj9n6e.png)
 
 #### 实验：
 
 ##### 实验 1:验证本文模型效果好
 
-![](/wiki/AIGC%E7%9B%B8%E5%85%B3/%E6%8A%80%E6%9C%AF%E9%95%BF%E6%96%87/static/BwcXbpuMEoW1lyxAQidc6E7tnKc.png)
+![](/images/AIGC%E7%9B%B8%E5%85%B3/%E6%8A%80%E6%9C%AF%E9%95%BF%E6%96%87/static/BwcXbpuMEoW1lyxAQidc6E7tnKc.png)
 **模型配置**：
 
 - **基线模型**：T5-Base（密集模型）、MoE-Base（top-2 路由，2 专家）。
@@ -117,13 +117,13 @@ MoE 能够在保持与传统稠密模型相同参数规模的前提下，通过�
 
 - 最后两层的专家数是前几层的两倍多；
 - 每个 token 都会通过一个固定住的专家（右图中的黄色 MLP，本文是 Top-1 的方式）和一个选择的专家（Top-1），这种模型叫做 Residual-MoE，每一层的表达式为：$y = \mathrm{MLP}^{(l)}(x) + g \cdot Expert^{(l)}(x) $
-  ![](/wiki/AIGC%E7%9B%B8%E5%85%B3/%E6%8A%80%E6%9C%AF%E9%95%BF%E6%96%87/static/Qn1xbPcG6o71tcx4Q19cWf7pn6e.png)
+  ![](/images/AIGC%E7%9B%B8%E5%85%B3/%E6%8A%80%E6%9C%AF%E9%95%BF%E6%96%87/static/Qn1xbPcG6o71tcx4Q19cWf7pn6e.png)
 
 #### 实验：
 
 ##### 实验 1:验证更深层的 MoE 需要更多专家
 
-![](/wiki/AIGC%E7%9B%B8%E5%85%B3/%E6%8A%80%E6%9C%AF%E9%95%BF%E6%96%87/static/S8EJbFbjqoKuVQxL5OOc3IDDnHb.png)
+![](/images/AIGC%E7%9B%B8%E5%85%B3/%E6%8A%80%E6%9C%AF%E9%95%BF%E6%96%87/static/S8EJbFbjqoKuVQxL5OOc3IDDnHb.png)
 **实验设置：**
 
 - 基于 350M+MoE 模型（12 层 MoE，每层 128 专家），
@@ -136,7 +136,7 @@ First-half MoE 比 second-half MoE 效果好，说明更深层的 MoE 需要更�
 
 ##### 实验 2:验证共享专家的效果
 
-![](/wiki/AIGC%E7%9B%B8%E5%85%B3/%E6%8A%80%E6%9C%AF%E9%95%BF%E6%96%87/static/XxBlb0EfwoLwH6xRt55cfDPxnBv.png)
+![](/images/AIGC%E7%9B%B8%E5%85%B3/%E6%8A%80%E6%9C%AF%E9%95%BF%E6%96%87/static/XxBlb0EfwoLwH6xRt55cfDPxnBv.png)
 **实验设置：**
 
 - 基于 350M+MoE 模型（12 层 MoE，每层 128 专家），
@@ -151,8 +151,8 @@ First-half MoE 比 second-half MoE 效果好，说明更深层的 MoE 需要更�
 
 ##### 实验 3:验证本文提出的模型效果好
 
-![](/wiki/AIGC%E7%9B%B8%E5%85%B3/%E6%8A%80%E6%9C%AF%E9%95%BF%E6%96%87/static/UD5XbzIaIoHTgEx5eDPcO7q0nCd.png)
-![](/wiki/AIGC%E7%9B%B8%E5%85%B3/%E6%8A%80%E6%9C%AF%E9%95%BF%E6%96%87/static/TAUdbZH0hoeQKIx0l9GcEI7VnJb.png)
+![](/images/AIGC%E7%9B%B8%E5%85%B3/%E6%8A%80%E6%9C%AF%E9%95%BF%E6%96%87/static/UD5XbzIaIoHTgEx5eDPcO7q0nCd.png)
+![](/images/AIGC%E7%9B%B8%E5%85%B3/%E6%8A%80%E6%9C%AF%E9%95%BF%E6%96%87/static/TAUdbZH0hoeQKIx0l9GcEI7VnJb.png)
 
 **实验设置：**
 
@@ -180,27 +180,27 @@ DeepSpeed-MoE 提出的 PR-MoE，通过金字塔结构和共享专家的设置�
 
 在稀疏模型的混合精度训练中，存在因 float32 转换为 bfloat16 带来的精度损失和训练收敛稳定性问题。具体而言，前向与反向传播采用 bfloat16，梯度更新使用 float32，当数值较大时，这种转换易造成明显精度损失，尤其在稀疏模型中因路由器的指数函数运算（softmax 运算）而被放大，影响损失值收敛的稳定性。
 
-![](/wiki/AIGC%E7%9B%B8%E5%85%B3/%E6%8A%80%E6%9C%AF%E9%95%BF%E6%96%87/static/Atmtb35flo1hD4xuFKscsjwHnOf.png)
-![](/wiki/AIGC%E7%9B%B8%E5%85%B3/%E6%8A%80%E6%9C%AF%E9%95%BF%E6%96%87/static/JAICbpaBGowOUSxHYc4cqQFlnCg.png)
+![](/images/AIGC%E7%9B%B8%E5%85%B3/%E6%8A%80%E6%9C%AF%E9%95%BF%E6%96%87/static/Atmtb35flo1hD4xuFKscsjwHnOf.png)
+![](/images/AIGC%E7%9B%B8%E5%85%B3/%E6%8A%80%E6%9C%AF%E9%95%BF%E6%96%87/static/JAICbpaBGowOUSxHYc4cqQFlnCg.png)
 
-![](/wiki/AIGC%E7%9B%B8%E5%85%B3/%E6%8A%80%E6%9C%AF%E9%95%BF%E6%96%87/static/XXSSbBJBso7qNUx5t94cXOENnkh.png)
+![](/images/AIGC%E7%9B%B8%E5%85%B3/%E6%8A%80%E6%9C%AF%E9%95%BF%E6%96%87/static/XXSSbBJBso7qNUx5t94cXOENnkh.png)
 
 ### DeepSeek-MoE( deepseek v2)
 
 #### **解决问题**：
 
-![](/wiki/AIGC%E7%9B%B8%E5%85%B3/%E6%8A%80%E6%9C%AF%E9%95%BF%E6%96%87/static/SVcebVKx5owd2RxxR0kcApgsnFc.png)
+![](/images/AIGC%E7%9B%B8%E5%85%B3/%E6%8A%80%E6%9C%AF%E9%95%BF%E6%96%87/static/SVcebVKx5owd2RxxR0kcApgsnFc.png)
 
 #### 具体细节：
 
 1. **细粒度专家分割方法：**以往方法是 N 个专家里选择 k 个，而这个方法是把每个专家划分成更小 m 个更小的专家，然后从 mN 个专家里选择 mk 个。
-   ![](/wiki/AIGC%E7%9B%B8%E5%85%B3/%E6%8A%80%E6%9C%AF%E9%95%BF%E6%96%87/static/Pm2wbkvmKo0mMgxmyNgcJtL0nVh.png)
+   ![](/images/AIGC%E7%9B%B8%E5%85%B3/%E6%8A%80%E6%9C%AF%E9%95%BF%E6%96%87/static/Pm2wbkvmKo0mMgxmyNgcJtL0nVh.png)
 2. **共享专家隔离方法：**除了细粒度专家分割策略外，隔离了  $K_s$个专家作为共享专家，总是保持激活，同时细粒度专家的激活数也变为了  $mN-K_s$
-   ![](/wiki/AIGC%E7%9B%B8%E5%85%B3/%E6%8A%80%E6%9C%AF%E9%95%BF%E6%96%87/static/UgbkbP1gToeLnExhSBTcOLBWnSf.png)
+   ![](/images/AIGC%E7%9B%B8%E5%85%B3/%E6%8A%80%E6%9C%AF%E9%95%BF%E6%96%87/static/UgbkbP1gToeLnExhSBTcOLBWnSf.png)
 
 #### 实验：验证提出的细粒度分割，以及共享隔离方案的有效性
 
-![](/wiki/AIGC%E7%9B%B8%E5%85%B3/%E6%8A%80%E6%9C%AF%E9%95%BF%E6%96%87/static/DwwYbeExiomcqBxsO19cesbDnSg.png)
+![](/images/AIGC%E7%9B%B8%E5%85%B3/%E6%8A%80%E6%9C%AF%E9%95%BF%E6%96%87/static/DwwYbeExiomcqBxsO19cesbDnSg.png)
 
 **图例说明：**
 横轴表示评估任务：
@@ -240,15 +240,15 @@ $Normalized Performance=\frac{模型在该任务的性能}{所有对比模型在
 
 #### 具体细节：
 
-![](/wiki/AIGC%E7%9B%B8%E5%85%B3/%E6%8A%80%E6%9C%AF%E9%95%BF%E6%96%87/static/WRlZbyGqdoDDumxv41qcNrDsn5m.png)
-![](/wiki/AIGC%E7%9B%B8%E5%85%B3/%E6%8A%80%E6%9C%AF%E9%95%BF%E6%96%87/static/HABqbw8GYoahISxfJlQc4ME6n6b.png)
+![](/images/AIGC%E7%9B%B8%E5%85%B3/%E6%8A%80%E6%9C%AF%E9%95%BF%E6%96%87/static/WRlZbyGqdoDDumxv41qcNrDsn5m.png)
+![](/images/AIGC%E7%9B%B8%E5%85%B3/%E6%8A%80%E6%9C%AF%E9%95%BF%E6%96%87/static/HABqbw8GYoahISxfJlQc4ME6n6b.png)
 
 #### 实验：验证 Gating Logit Normalization 方法效果
 
-![](/wiki/AIGC%E7%9B%B8%E5%85%B3/%E6%8A%80%E6%9C%AF%E9%95%BF%E6%96%87/static/RdpDbaMxooeAYvxkQX5c61icn0c.png)
-![](/wiki/AIGC%E7%9B%B8%E5%85%B3/%E6%8A%80%E6%9C%AF%E9%95%BF%E6%96%87/static/SFmqbHwuVotlkxxToEQcKNnInNd.png)
+![](/images/AIGC%E7%9B%B8%E5%85%B3/%E6%8A%80%E6%9C%AF%E9%95%BF%E6%96%87/static/RdpDbaMxooeAYvxkQX5c61icn0c.png)
+![](/images/AIGC%E7%9B%B8%E5%85%B3/%E6%8A%80%E6%9C%AF%E9%95%BF%E6%96%87/static/SFmqbHwuVotlkxxToEQcKNnInNd.png)
 
-![](/wiki/AIGC%E7%9B%B8%E5%85%B3/%E6%8A%80%E6%9C%AF%E9%95%BF%E6%96%87/static/OZkwbSYKAouP8sx34DtcrFpKnWc.png)
+![](/images/AIGC%E7%9B%B8%E5%85%B3/%E6%8A%80%E6%9C%AF%E9%95%BF%E6%96%87/static/OZkwbSYKAouP8sx34DtcrFpKnWc.png)
 
 ### DeepSeek-V3
 
@@ -272,16 +272,16 @@ $Normalized Performance=\frac{模型在该任务的性能}{所有对比模型在
 
 Softmax 的归一化会抑制非 Top 专家，Sigmoid 保留所有专家信息.
 
-![](/wiki/AIGC%E7%9B%B8%E5%85%B3/%E6%8A%80%E6%9C%AF%E9%95%BF%E6%96%87/static/WTUcbc4AMonI0Gx6OD6cAVlpneb.png)
+![](/images/AIGC%E7%9B%B8%E5%85%B3/%E6%8A%80%E6%9C%AF%E9%95%BF%E6%96%87/static/WTUcbc4AMonI0Gx6OD6cAVlpneb.png)
 
-![](/wiki/AIGC%E7%9B%B8%E5%85%B3/%E6%8A%80%E6%9C%AF%E9%95%BF%E6%96%87/static/CnY3bRff7oICMOxeCRZcMhstn23.png)
+![](/images/AIGC%E7%9B%B8%E5%85%B3/%E6%8A%80%E6%9C%AF%E9%95%BF%E6%96%87/static/CnY3bRff7oICMOxeCRZcMhstn23.png)
 
 > 如何判断专家过载，文章好像说是根据定期检测的统计数据得到的。
-> ![](/wiki/AIGC%E7%9B%B8%E5%85%B3/%E6%8A%80%E6%9C%AF%E9%95%BF%E6%96%87/static/FMKqbIA4SoIksHxNzzIcDBiQnKf.png)
+> ![](/images/AIGC%E7%9B%B8%E5%85%B3/%E6%8A%80%E6%9C%AF%E9%95%BF%E6%96%87/static/FMKqbIA4SoIksHxNzzIcDBiQnKf.png)
 
 #### 实验： 验证无辅助损失策略可以提升专家专业化
 
-![](/wiki/AIGC%E7%9B%B8%E5%85%B3/%E6%8A%80%E6%9C%AF%E9%95%BF%E6%96%87/static/GyZvbGYzUojs8DxWyBKcFq0Ynbd.png)
+![](/images/AIGC%E7%9B%B8%E5%85%B3/%E6%8A%80%E6%9C%AF%E9%95%BF%E6%96%87/static/GyZvbGYzUojs8DxWyBKcFq0Ynbd.png)
 **实验设置：**
 Aux-loss-Based，使用普通负载均衡辅助 loss 的方式
 Aux-loss-Free，使用本文的方式
@@ -317,7 +317,7 @@ Layer 表示第几个专家层
 
 #### 具体细节：
 
-![](/wiki/AIGC%E7%9B%B8%E5%85%B3/%E6%8A%80%E6%9C%AF%E9%95%BF%E6%96%87/static/GSzLbPukcoEDELxcPrCc43T6nsx.png)
+![](/images/AIGC%E7%9B%B8%E5%85%B3/%E6%8A%80%E6%9C%AF%E9%95%BF%E6%96%87/static/GSzLbPukcoEDELxcPrCc43T6nsx.png)
 
 ### 自适应的辅助损失系数（Skywork-MoE）
 
@@ -333,11 +333,11 @@ Skywork-MoE 发现以下两点：
 
 #### 具体细节：
 
-![](/wiki/AIGC%E7%9B%B8%E5%85%B3/%E6%8A%80%E6%9C%AF%E9%95%BF%E6%96%87/static/HNCTbsUJOoxqt1xOCxRcvKetnCh.png)
+![](/images/AIGC%E7%9B%B8%E5%85%B3/%E6%8A%80%E6%9C%AF%E9%95%BF%E6%96%87/static/HNCTbsUJOoxqt1xOCxRcvKetnCh.png)
 
 #### 实验：验证方法起作用
 
-![](/wiki/AIGC%E7%9B%B8%E5%85%B3/%E6%8A%80%E6%9C%AF%E9%95%BF%E6%96%87/static/LRpZb1KM9oyXeVxfkZkcuwGsnNg.png)
+![](/images/AIGC%E7%9B%B8%E5%85%B3/%E6%8A%80%E6%9C%AF%E9%95%BF%E6%96%87/static/LRpZb1KM9oyXeVxfkZkcuwGsnNg.png)
 **图例说明：**
 右侧色彩编码代表 52 个门控层，故而图中有 52 条曲线；
 两个图的横轴都表示随着训练次数增加的 token 数；
@@ -360,17 +360,17 @@ $$
 
 #### 具体细节：
 
-![](/wiki/AIGC%E7%9B%B8%E5%85%B3/%E6%8A%80%E6%9C%AF%E9%95%BF%E6%96%87/static/Zx3ObbNmRoq9CWxYlRPctKlXnse.png)
+![](/images/AIGC%E7%9B%B8%E5%85%B3/%E6%8A%80%E6%9C%AF%E9%95%BF%E6%96%87/static/Zx3ObbNmRoq9CWxYlRPctKlXnse.png)
 
 ### 基于全局批次的辅助损失 （qwen3 中使用）
 
 #### 解决问题；
 
-![](/wiki/AIGC%E7%9B%B8%E5%85%B3/%E6%8A%80%E6%9C%AF%E9%95%BF%E6%96%87/static/KXrybIQb8oXA7Vxcy3FcHLRqn5f.png)
+![](/images/AIGC%E7%9B%B8%E5%85%B3/%E6%8A%80%E6%9C%AF%E9%95%BF%E6%96%87/static/KXrybIQb8oXA7Vxcy3FcHLRqn5f.png)
 
 #### 具体细节：
 
-![](/wiki/AIGC%E7%9B%B8%E5%85%B3/%E6%8A%80%E6%9C%AF%E9%95%BF%E6%96%87/static/SpDvb3RS6oOkC8xDtAKcmYkEnaf.png)
+![](/images/AIGC%E7%9B%B8%E5%85%B3/%E6%8A%80%E6%9C%AF%E9%95%BF%E6%96%87/static/SpDvb3RS6oOkC8xDtAKcmYkEnaf.png)
 
 # 新颖的 MoE 框架（偏科研创新）
 
@@ -382,15 +382,15 @@ $$
 
 **方案：**对 MoE 中的专家类型做扩展，增加了 3 种类型的专家：(1)Zero 专家：专家输出始终为 0.（2）Copy 专家：专家输出等于专家输入 （3）Const 专家：专家输出包含常数项。同时为了能兼容这些类型，对门控机制做了修改，使得会受到上个门控的残差影响。 同时这样可以减少计算量。
 
-![](/wiki/AIGC%E7%9B%B8%E5%85%B3/%E6%8A%80%E6%9C%AF%E9%95%BF%E6%96%87/static/SfwGbiAswoWdK4xB5SacCRbDnFh.png)
+![](/images/AIGC%E7%9B%B8%E5%85%B3/%E6%8A%80%E6%9C%AF%E9%95%BF%E6%96%87/static/SfwGbiAswoWdK4xB5SacCRbDnFh.png)
 
 #### **具体方案：**
 
-![](/wiki/AIGC%E7%9B%B8%E5%85%B3/%E6%8A%80%E6%9C%AF%E9%95%BF%E6%96%87/static/ThBpbj1yOoMKC9xuZudcGm2HnSI.png)
+![](/images/AIGC%E7%9B%B8%E5%85%B3/%E6%8A%80%E6%9C%AF%E9%95%BF%E6%96%87/static/ThBpbj1yOoMKC9xuZudcGm2HnSI.png)
 
-![](/wiki/AIGC%E7%9B%B8%E5%85%B3/%E6%8A%80%E6%9C%AF%E9%95%BF%E6%96%87/static/E6TPbjcRGooAHHxtYZ6clk7bn7d.png)
+![](/images/AIGC%E7%9B%B8%E5%85%B3/%E6%8A%80%E6%9C%AF%E9%95%BF%E6%96%87/static/E6TPbjcRGooAHHxtYZ6clk7bn7d.png)
 
-![](/wiki/AIGC%E7%9B%B8%E5%85%B3/%E6%8A%80%E6%9C%AF%E9%95%BF%E6%96%87/static/URKobjiXDoLsYIxP5xvc5OxJn0e.png)
+![](/images/AIGC%E7%9B%B8%E5%85%B3/%E6%8A%80%E6%9C%AF%E9%95%BF%E6%96%87/static/URKobjiXDoLsYIxP5xvc5OxJn0e.png)
 
 ### Top-p 动态路由机制
 
@@ -404,7 +404,7 @@ $$
 
 **路由方式：**
 
-![](/wiki/AIGC%E7%9B%B8%E5%85%B3/%E6%8A%80%E6%9C%AF%E9%95%BF%E6%96%87/static/NgYybjQXBowJHOx89wmceNgOnSb.png)
+![](/images/AIGC%E7%9B%B8%E5%85%B3/%E6%8A%80%E6%9C%AF%E9%95%BF%E6%96%87/static/NgYybjQXBowJHOx89wmceNgOnSb.png)
 
 **动态损失项：**
 
@@ -427,7 +427,7 @@ $L_{total}=L_{ce}+L_{aux}+\color{red}L_{d} \color{black}$， $\mathcal{L}_d = -\
 
 ##### 实验 1: 验证可以减少专家激活个数
 
-![](/wiki/AIGC%E7%9B%B8%E5%85%B3/%E6%8A%80%E6%9C%AF%E9%95%BF%E6%96%87/static/YGQnbMXqQolZLixNCDGcbTRyn7d.png)
+![](/images/AIGC%E7%9B%B8%E5%85%B3/%E6%8A%80%E6%9C%AF%E9%95%BF%E6%96%87/static/YGQnbMXqQolZLixNCDGcbTRyn7d.png)
 **图例说明：**
 横轴：训练的 tokens 数量随着训练次数而增加
 纵轴：平均激活的专家数
@@ -438,8 +438,8 @@ Top-P 架构随着训练进行，激活专家数下降
 
 ### MoE 经典论文及团队信息表
 
-![](/wiki/AIGC%E7%9B%B8%E5%85%B3/%E6%8A%80%E6%9C%AF%E9%95%BF%E6%96%87/static/OoxKbAHbto0yXbxN00YcFvQSnTe.png)
+![](/images/AIGC%E7%9B%B8%E5%85%B3/%E6%8A%80%E6%9C%AF%E9%95%BF%E6%96%87/static/OoxKbAHbto0yXbxN00YcFvQSnTe.png)
 
 ### 其他文章
 
-![](/wiki/AIGC%E7%9B%B8%E5%85%B3/%E6%8A%80%E6%9C%AF%E9%95%BF%E6%96%87/static/RLfxb2bxxoXw0PxMry8cWBZonJd.png)
+![](/images/AIGC%E7%9B%B8%E5%85%B3/%E6%8A%80%E6%9C%AF%E9%95%BF%E6%96%87/static/RLfxb2bxxoXw0PxMry8cWBZonJd.png)

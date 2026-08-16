@@ -37,7 +37,7 @@ T 越大，$e^{z_i/T}$趋近相等，概率均匀分布：
 
 看下图可以看到是在最后的输出环节中。
 
-![](/wiki/AIGC%E7%9B%B8%E5%85%B3/%E6%8A%80%E6%9C%AF%E7%BB%86%E7%A2%8E%E5%A4%A7%E6%A8%A1%E5%9E%8B%E7%9F%A5%E8%AF%86/static/WXagwTTrIhGzhvbra1CcvJFSnxb.png)
+![](/images/AIGC%E7%9B%B8%E5%85%B3/%E6%8A%80%E6%9C%AF%E7%BB%86%E7%A2%8E%E5%A4%A7%E6%A8%A1%E5%9E%8B%E7%9F%A5%E8%AF%86/static/WXagwTTrIhGzhvbra1CcvJFSnxb.png)
 
 ### 从公式理解维度变化
 

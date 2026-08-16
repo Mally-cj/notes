@@ -18,7 +18,7 @@
 
 ### 预备知识
 
-![](/wiki/AIGC%E7%9B%B8%E5%85%B3/%E6%8A%80%E6%9C%AF%E8%AE%BA%E6%96%87%E9%98%85%E8%AF%BB/static/UgPXbClKco44q2xgTp6cUBO3nIf.png)
+![](/images/AIGC%E7%9B%B8%E5%85%B3/%E6%8A%80%E6%9C%AF%E8%AE%BA%E6%96%87%E9%98%85%E8%AF%BB/static/UgPXbClKco44q2xgTp6cUBO3nIf.png)
 
 ### 方法
 
@@ -58,13 +58,13 @@ final_advantages = [
 
 #### StarPO-S
 
-![](/wiki/AIGC%E7%9B%B8%E5%85%B3/%E6%8A%80%E6%9C%AF%E8%AE%BA%E6%96%87%E9%98%85%E8%AF%BB/static/LZ2Gbavx9oJGIPxATOKcNFbQnQe.png)
+![](/images/AIGC%E7%9B%B8%E5%85%B3/%E6%8A%80%E6%9C%AF%E8%AE%BA%E6%96%87%E9%98%85%E8%AF%BB/static/LZ2Gbavx9oJGIPxATOKcNFbQnQe.png)
 
 ### 实验场景
 
 #### 1.Bandit
 
-![](/wiki/AIGC%E7%9B%B8%E5%85%B3/%E6%8A%80%E6%9C%AF%E8%AE%BA%E6%96%87%E9%98%85%E8%AF%BB/static/QDwYbkNE9ov6dAxu7prcRiH4nZc.png)
+![](/images/AIGC%E7%9B%B8%E5%85%B3/%E6%8A%80%E6%9C%AF%E8%AE%BA%E6%96%87%E9%98%85%E8%AF%BB/static/QDwYbkNE9ov6dAxu7prcRiH4nZc.png)
 
 **环境描述：**测试智能体在不确定性下的风险评估和推理能力。智能体需要在两个语义化的选项间选择以最大化累计奖励。
 
@@ -113,7 +113,7 @@ Episode 200 → 策略收敛（"选择 Dragon 最大化期望回报"）
 
 #### 2.推箱子
 
-![](/wiki/AIGC%E7%9B%B8%E5%85%B3/%E6%8A%80%E6%9C%AF%E8%AE%BA%E6%96%87%E9%98%85%E8%AF%BB/static/WUInbMcZXo5ttJx0JzWcHvfenCf.png)
+![](/images/AIGC%E7%9B%B8%E5%85%B3/%E6%8A%80%E6%9C%AF%E8%AE%BA%E6%96%87%E9%98%85%E8%AF%BB/static/WUInbMcZXo5ttJx0JzWcHvfenCf.png)
 环境描述：经典的逻辑推理游戏，智能体需要将所有箱子推到指定目标位置。强调不可逆的长期规划能力。
 
 环境特点
@@ -144,7 +144,7 @@ P = Player, B = Box, . = Target,
 
 #### 3.Frozen Lake（冰湖）
 
-![](/wiki/AIGC%E7%9B%B8%E5%85%B3/%E6%8A%80%E6%9C%AF%E8%AE%BA%E6%96%87%E9%98%85%E8%AF%BB/static/HIOybn1apog57txkP1JcNbGCn8g.png)
+![](/images/AIGC%E7%9B%B8%E5%85%B3/%E6%8A%80%E6%9C%AF%E8%AE%BA%E6%96%87%E9%98%85%E8%AF%BB/static/HIOybn1apog57txkP1JcNbGCn8g.png)
 
 环境描述：智能体在冰面上导航到目标，但每次移动都可能滑向意外方向。测试智能体在随机环境中的适应能力。
 
@@ -243,12 +243,12 @@ Step 5: click[buy now] → complete purchase
 
 实验指标
 
-![](/wiki/AIGC%E7%9B%B8%E5%85%B3/%E6%8A%80%E6%9C%AF%E8%AE%BA%E6%96%87%E9%98%85%E8%AF%BB/static/ZHdnbart9ocUvNxRFNWcmWNNnXb.png)
+![](/images/AIGC%E7%9B%B8%E5%85%B3/%E6%8A%80%E6%9C%AF%E8%AE%BA%E6%96%87%E9%98%85%E8%AF%BB/static/ZHdnbart9ocUvNxRFNWcmWNNnXb.png)
 
-![](/wiki/AIGC%E7%9B%B8%E5%85%B3/%E6%8A%80%E6%9C%AF%E8%AE%BA%E6%96%87%E9%98%85%E8%AF%BB/static/ORF0bhAQvoWpgyxmmqtctK5Dn0f.png)
+![](/images/AIGC%E7%9B%B8%E5%85%B3/%E6%8A%80%E6%9C%AF%E8%AE%BA%E6%96%87%E9%98%85%E8%AF%BB/static/ORF0bhAQvoWpgyxmmqtctK5Dn0f.png)
 
-![](/wiki/AIGC%E7%9B%B8%E5%85%B3/%E6%8A%80%E6%9C%AF%E8%AE%BA%E6%96%87%E9%98%85%E8%AF%BB/static/TK8fbl776oe8P8xcgLzcTcRpnQg.png)
-![](/wiki/AIGC%E7%9B%B8%E5%85%B3/%E6%8A%80%E6%9C%AF%E8%AE%BA%E6%96%87%E9%98%85%E8%AF%BB/static/DivFbXxOVobmbZxrUA7cw3Vcnkg.png)
+![](/images/AIGC%E7%9B%B8%E5%85%B3/%E6%8A%80%E6%9C%AF%E8%AE%BA%E6%96%87%E9%98%85%E8%AF%BB/static/TK8fbl776oe8P8xcgLzcTcRpnQg.png)
+![](/images/AIGC%E7%9B%B8%E5%85%B3/%E6%8A%80%E6%9C%AF%E8%AE%BA%E6%96%87%E9%98%85%E8%AF%BB/static/DivFbXxOVobmbZxrUA7cw3Vcnkg.png)
 
 **现象一: 平均奖励直接反映崩溃，而奖励标准差和熵值变化在早期做出预警。**
 
@@ -278,7 +278,7 @@ Bandit 是因为让模型发现可以作弊走捷径，而奔溃，在实验 2 �
 
 #### 子实验 2:为什么 Bandit 会出现崩溃
 
-![](/wiki/AIGC%E7%9B%B8%E5%85%B3/%E6%8A%80%E6%9C%AF%E8%AE%BA%E6%96%87%E9%98%85%E8%AF%BB/static/RcSLbCVhWotFDMxvXWLcISpGn0D.png)
+![](/images/AIGC%E7%9B%B8%E5%85%B3/%E6%8A%80%E6%9C%AF%E8%AE%BA%E6%96%87%E9%98%85%E8%AF%BB/static/RcSLbCVhWotFDMxvXWLcISpGn0D.png)
 
 实验现象：在没有训练 step0=0 的时候，llm 输出的回复具有多样性; 在训练到 step=150 时，llm 的回复重复，且不具有逻辑性。说明此刻大模型此时只知道要选“捷径”答案，而放弃分析。
 
@@ -296,7 +296,7 @@ Bandit 是因为让模型发现可以作弊走捷径，而奔溃，在实验 2 �
 
 每步更新，会有很多 prompt，每个 prompt 会产生 n 个回复，得到 n 个奖励；每个 prompt 产生的记做一组 rollout，计算每组 rollout 的奖励方差，只保留 p% 高方差奖励的 rollout。
 
-![](/wiki/AIGC%E7%9B%B8%E5%85%B3/%E6%8A%80%E6%9C%AF%E8%AE%BA%E6%96%87%E9%98%85%E8%AF%BB/static/QF6kbxX64o2AKgxKbqZcJoETnZb.png)
+![](/images/AIGC%E7%9B%B8%E5%85%B3/%E6%8A%80%E6%9C%AF%E8%AE%BA%E6%96%87%E9%98%85%E8%AF%BB/static/QF6kbxX64o2AKgxKbqZcJoETnZb.png)
 
 现象 1:  图 5 中前两个 PPO 的图中，使用这种过滤操作避免了崩溃；但是对第 3 个图 GRPO 只是延缓了崩溃。
 
@@ -304,7 +304,7 @@ Bandit 是因为让模型发现可以作弊走捷径，而奔溃，在实验 2 �
 
 #### 子实验 1：进一步研究什么时候用这种过滤策略有效？
 
-![](/wiki/AIGC%E7%9B%B8%E5%85%B3/%E6%8A%80%E6%9C%AF%E8%AE%BA%E6%96%87%E9%98%85%E8%AF%BB/static/WIAab16bKoITvqx4lHvce9wsn0O.png)
+![](/images/AIGC%E7%9B%B8%E5%85%B3/%E6%8A%80%E6%9C%AF%E8%AE%BA%E6%96%87%E9%98%85%E8%AF%BB/static/WIAab16bKoITvqx4lHvce9wsn0O.png)
 
 图例说明：StarPO-S 是采用过滤策略 25% 之后，第 2 行是过滤前后的方差对比，第 1 行是在 4 个游戏下的成功率。
 
@@ -316,7 +316,7 @@ Bandit 是因为让模型发现可以作弊走捷径，而奔溃，在实验 2 �
 
 #### 子实验 2: StarPO-S 在更大模型上效果会怎么样
 
-![](/wiki/AIGC%E7%9B%B8%E5%85%B3/%E6%8A%80%E6%9C%AF%E8%AE%BA%E6%96%87%E9%98%85%E8%AF%BB/static/KpdabsA9woEvQYx2eyIcItOSn1e.png)
+![](/images/AIGC%E7%9B%B8%E5%85%B3/%E6%8A%80%E6%9C%AF%E8%AE%BA%E6%96%87%E9%98%85%E8%AF%BB/static/KpdabsA9woEvQYx2eyIcItOSn1e.png)
 
 实验设置：StarPO-S， PPO
 
@@ -326,7 +326,7 @@ Bandit 是因为让模型发现可以作弊走捷径，而奔溃，在实验 2 �
 
 #### 子实验 3：探索经过精心构建，小模型是否能达到大模型的能力
 
-![](/wiki/AIGC%E7%9B%B8%E5%85%B3/%E6%8A%80%E6%9C%AF%E8%AE%BA%E6%96%87%E9%98%85%E8%AF%BB/static/SbdEb2WCNoAjyfxHhqCcgg1snyb.png)
+![](/images/AIGC%E7%9B%B8%E5%85%B3/%E6%8A%80%E6%9C%AF%E8%AE%BA%E6%96%87%E9%98%85%E8%AF%BB/static/SbdEb2WCNoAjyfxHhqCcgg1snyb.png)
 
 实验设置：0.5B 模型只在 4 response per prompt 下训练（StarPo-S 方式），GPT 和 Qwen 不训练 ，两者模型大小差距 100 倍
 
@@ -338,7 +338,7 @@ Bandit 是因为让模型发现可以作弊走捷径，而奔溃，在实验 2 �
 
 #### 子实验 4:消融探索去除 KL 和 clip high 策略的影响
 
-![](/wiki/AIGC%E7%9B%B8%E5%85%B3/%E6%8A%80%E6%9C%AF%E8%AE%BA%E6%96%87%E9%98%85%E8%AF%BB/static/GICubxf6xoQVMJxbj3Scb3RFn9c.png)
+![](/images/AIGC%E7%9B%B8%E5%85%B3/%E6%8A%80%E6%9C%AF%E8%AE%BA%E6%96%87%E9%98%85%E8%AF%BB/static/GICubxf6xoQVMJxbj3Scb3RFn9c.png)
 
 **实验设置：**StarPO，在推箱子和冰湖游戏上
 
@@ -354,7 +354,7 @@ Clip high，相当于鼓励更高效地从高奖励中学习，这对于 Sokoban
 
 #### 子实验 1: 探索 prompt 数量和回复数量的关系
 
-![](/wiki/AIGC%E7%9B%B8%E5%85%B3/%E6%8A%80%E6%9C%AF%E8%AE%BA%E6%96%87%E9%98%85%E8%AF%BB/static/OTl2bxZ1PoKC6px2Q1MctHRpnjb.png)
+![](/images/AIGC%E7%9B%B8%E5%85%B3/%E6%8A%80%E6%9C%AF%E8%AE%BA%E6%96%87%E9%98%85%E8%AF%BB/static/OTl2bxZ1PoKC6px2Q1MctHRpnjb.png)
 
 **实验设置：**
 
@@ -370,7 +370,7 @@ Clip high，相当于鼓励更高效地从高奖励中学习，这对于 Sokoban
 
 #### 子实验 2:
 
-![](/wiki/AIGC%E7%9B%B8%E5%85%B3/%E6%8A%80%E6%9C%AF%E8%AE%BA%E6%96%87%E9%98%85%E8%AF%BB/static/GsZIbnhBIoI8edxvYcucBzhunqf.png)
+![](/images/AIGC%E7%9B%B8%E5%85%B3/%E6%8A%80%E6%9C%AF%E8%AE%BA%E6%96%87%E9%98%85%E8%AF%BB/static/GsZIbnhBIoI8edxvYcucBzhunqf.png)
 
 实验设置：
 
@@ -386,7 +386,7 @@ Clip high，相当于鼓励更高效地从高奖励中学习，这对于 Sokoban
 
 #### 子实验 3
 
-![](/wiki/AIGC%E7%9B%B8%E5%85%B3/%E6%8A%80%E6%9C%AF%E8%AE%BA%E6%96%87%E9%98%85%E8%AF%BB/static/JT3gbw9JeowuN0xrnvEcqgotnxh.png)
+![](/images/AIGC%E7%9B%B8%E5%85%B3/%E6%8A%80%E6%9C%AF%E8%AE%BA%E6%96%87%E9%98%85%E8%AF%BB/static/JT3gbw9JeowuN0xrnvEcqgotnxh.png)
 
 **实验设置：**
 

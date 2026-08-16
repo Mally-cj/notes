@@ -36,7 +36,7 @@ $$
 
 然而这样展开后发现对$LBL_{micro}$公式的修改仅仅是 $f_i^j$ 替换成了基于微批次平均后的 $\bar{f_i}$。
 
-![](/wiki/AIGC%E7%9B%B8%E5%85%B3/%E6%8A%80%E6%9C%AF%E8%AE%BA%E6%96%87%E9%98%85%E8%AF%BB/static/V4SibGz40oRR13xU62xcL9z2nxh.png)
+![](/images/AIGC%E7%9B%B8%E5%85%B3/%E6%8A%80%E6%9C%AF%E8%AE%BA%E6%96%87%E9%98%85%E8%AF%BB/static/V4SibGz40oRR13xU62xcL9z2nxh.png)
 
 ## 实验结果
 
@@ -86,7 +86,7 @@ $$
 
 ### 实验二
 
-![](/wiki/AIGC%E7%9B%B8%E5%85%B3/%E6%8A%80%E6%9C%AF%E8%AE%BA%E6%96%87%E9%98%85%E8%AF%BB/static/VIOPb5lznosXaexMu1Gc791YnNc.png)
+![](/images/AIGC%E7%9B%B8%E5%85%B3/%E6%8A%80%E6%9C%AF%E8%AE%BA%E6%96%87%E9%98%85%E8%AF%BB/static/VIOPb5lznosXaexMu1Gc791YnNc.png)
 
 **图片含义**：图(a)对比了有无 LBL，和小批次和全局批次的情况。上图使用指标是多个微调数据集的测试集的困惑度比较，下图是在多个下游任务评估基准上的平均得分。
 
@@ -100,7 +100,7 @@ $$
 
 ### 实验三
 
-![](/wiki/AIGC%E7%9B%B8%E5%85%B3/%E6%8A%80%E6%9C%AF%E8%AE%BA%E6%96%87%E9%98%85%E8%AF%BB/static/B59DbPqsJo9O4Kx5M6tcf2c7nlB.png)
+![](/images/AIGC%E7%9B%B8%E5%85%B3/%E6%8A%80%E6%9C%AF%E8%AE%BA%E6%96%87%E9%98%85%E8%AF%BB/static/B59DbPqsJo9O4Kx5M6tcf2c7nlB.png)
 
 分析：
 
@@ -118,7 +118,7 @@ $$
 
 实验结果：表 2 显示 shuffle 的结果与 global 的情况接近，说明是分布对模型性能产生影响，而不是 token 的数量。
 
-![](/wiki/AIGC%E7%9B%B8%E5%85%B3/%E6%8A%80%E6%9C%AF%E8%AE%BA%E6%96%87%E9%98%85%E8%AF%BB/static/E1GPbnqJNoGdINxwThScggD4nSb.png)
+![](/images/AIGC%E7%9B%B8%E5%85%B3/%E6%8A%80%E6%9C%AF%E8%AE%BA%E6%96%87%E9%98%85%E8%AF%BB/static/E1GPbnqJNoGdINxwThScggD4nSb.png)
 
 ### 实验二
 
@@ -136,8 +136,8 @@ $$
 
 上图是是负载损失函数的收敛情况，下图是语言建模损失函数的收敛情况，右边是左边的放大细节。
 
-![](/wiki/AIGC%E7%9B%B8%E5%85%B3/%E6%8A%80%E6%9C%AF%E8%AE%BA%E6%96%87%E9%98%85%E8%AF%BB/static/V2gJboMWIokZsVxevlocLZdgnQf.png)
-![](/wiki/AIGC%E7%9B%B8%E5%85%B3/%E6%8A%80%E6%9C%AF%E8%AE%BA%E6%96%87%E9%98%85%E8%AF%BB/static/AkmTbbdKkoOvQZxVqE9cQInZn8q.png)
+![](/images/AIGC%E7%9B%B8%E5%85%B3/%E6%8A%80%E6%9C%AF%E8%AE%BA%E6%96%87%E9%98%85%E8%AF%BB/static/V2gJboMWIokZsVxevlocLZdgnQf.png)
+![](/images/AIGC%E7%9B%B8%E5%85%B3/%E6%8A%80%E6%9C%AF%E8%AE%BA%E6%96%87%E9%98%85%E8%AF%BB/static/AkmTbbdKkoOvQZxVqE9cQInZn8q.png)
 
 #### **实验分析：**
 
@@ -167,7 +167,7 @@ $LBL_{micro}$由于比 $LBL_{global}$要紧凑而效果不好，那么可不可�
 
 减少权重为 0.004 和 0.001
 
-![](/wiki/AIGC%E7%9B%B8%E5%85%B3/%E6%8A%80%E6%9C%AF%E8%AE%BA%E6%96%87%E9%98%85%E8%AF%BB/static/XDNfbnzyCoeYCXxNbzBcJb7vnIb.png)
+![](/images/AIGC%E7%9B%B8%E5%85%B3/%E6%8A%80%E6%9C%AF%E8%AE%BA%E6%96%87%E9%98%85%E8%AF%BB/static/XDNfbnzyCoeYCXxNbzBcJb7vnIb.png)
 
 **现象:  **权重从 0.008 减少到 0.004 的时候性能提升，但是降低到 0.001 的时候更差了。但是效果始终没有比 BSZ 为 512 的情况好。
 
@@ -183,7 +183,7 @@ $LBL_{global}$的计算会比$LBL_{micro}$要慢，可以不可以从第 20k 训
 
 #### 实验设置：
 
-![](/wiki/AIGC%E7%9B%B8%E5%85%B3/%E6%8A%80%E6%9C%AF%E8%AE%BA%E6%96%87%E9%98%85%E8%AF%BB/static/YryMbQUh3oFqBKxgb5rcB8lon0f.png)
+![](/images/AIGC%E7%9B%B8%E5%85%B3/%E6%8A%80%E6%9C%AF%E8%AE%BA%E6%96%87%E9%98%85%E8%AF%BB/static/YryMbQUh3oFqBKxgb5rcB8lon0f.png)
 
 **现象：**表 5 的第 3 行可见，精度下降一点点但是速度提升了
 
@@ -199,7 +199,7 @@ $LBL_{global}$的计算会比$LBL_{micro}$要慢，可以不可以从第 20k 训
 
 在图 4（a）中，记录不同领域的令牌分配给每个专家的分数，并计算 topK 分数总和的平均值 。当所有专家被分配相同身份分数时，topK 总和由灰色虚线表示。
 
-![](/wiki/AIGC%E7%9B%B8%E5%85%B3/%E6%8A%80%E6%9C%AF%E8%AE%BA%E6%96%87%E9%98%85%E8%AF%BB/static/S6yvbEWpXoB4xvx0vqGcAiKdnwc.png)
+![](/images/AIGC%E7%9B%B8%E5%85%B3/%E6%8A%80%E6%9C%AF%E8%AE%BA%E6%96%87%E9%98%85%E8%AF%BB/static/S6yvbEWpXoB4xvx0vqGcAiKdnwc.png)
 
 #### 实验分析
 
