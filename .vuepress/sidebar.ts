@@ -1,4 +1,13 @@
+
+import { SidebarOptions } from "@vuepress/theme-default";
+
+import AIGC相关Siderbar from "./sidebars/AIGC相关Siderbar";
+
 export default {
-    // 降级：没有专门侧边栏配置的页面，按当前页面标题生成侧边栏。
-    "/": "heading",
-};
+
+    "/AIGC相关/": AIGC相关Siderbar,
+    
+    // 降级，默认根据文章标题渲染侧边栏
+    '/': "heading" ,
+} as SidebarOptions;
+    
