@@ -1,7 +1,7 @@
-# 本地 Markdown 博客
+# 文章
 
-这里收录直接在本地编写并通过 GitHub 发布的文章。
+本站文章均以 Markdown 文件保存在 GitHub 仓库中。
 
-## 文章
+## 分类
 
-- [本地 Markdown 发布测试](./本地-Markdown-发布测试.md)
+- [AIGC 相关](/AIGC相关/)

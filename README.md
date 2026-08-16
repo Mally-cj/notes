@@ -26,11 +26,9 @@ permalink: /
 
 ## 本站内容
 
-- [AIGC相关](/AIGC相关)
-- [本地 Markdown 博客](/博客/)
+- [文章](/博客/)
 
 ## 其他内容
 
 - [我的Github](https://github.com/Mally-cj)
 - [我的CSDN博客](https://blog.csdn.net/qq_43235540) - 欢迎访问！
-
